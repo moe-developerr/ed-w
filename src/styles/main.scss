@@ -1,0 +1,63 @@
+// 1. utils
+@import
+	'utils/functions',
+	'utils/vars',
+	'utils/mixins',
+	'utils/helpers';
+
+// 2. vendors
+@import
+	'vendors/reset-and-normalize',
+	'vendors/lity',
+	'vendors/royalslider',
+	'vendors/rs-default',
+	'vendors/font-line-icons',
+	'vendors/icons';
+
+// 3. base
+@import
+	'base/base',
+	'base/ar',
+	'base/fonts';
+
+// 4. layout
+@import
+	'layout/main',
+	'layout/menu',
+	'layout/header',
+	'layout/site-wrapper',
+	'layout/footer';
+
+// 5. components
+@import
+	'components/social-media',
+	'components/page-bar',
+	'components/slider',
+	'components/faqs',
+	'components/add-ons',
+	'components/price-tag',
+	'components/animation',
+	'components/notification',
+	'components/aside',
+	'components/iframe',
+	'components/checkbox',
+	'components/highlights',
+	'components/features',
+	'components/myicons',
+	'components/form',
+	'components/hero',
+	'components/contact-info',
+	'components/logo',
+	'components/drop-down',
+	'components/border',
+	'components/section',
+	'components/blog',
+	'components/buttons';
+
+// 6. pages
+@import
+	'pages/main';
+
+// 7. themes
+@import
+	'themes/default';

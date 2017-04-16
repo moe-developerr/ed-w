@@ -1,0 +1,40 @@
+.section {
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	@include m('on-premises') {
+		background: url('../../images/on-premises-bg.jpg') no-repeat center;
+		background-size: cover;
+	}
+
+	@include m('bordered') {
+		max-width: 1400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include m('footer') {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	@include m('sub') {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	@include m('aside') {
+		margin-bottom: 30px;
+	}
+
+	@include e('title') {
+		margin-bottom: 20px;
+		.btn {
+			vertical-align: middle;
+			font-size: 1.5rem;
+		}
+	}
+	@include e('subtitle') {
+		margin-bottom: 20px;
+	}
+}

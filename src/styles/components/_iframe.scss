@@ -1,0 +1,53 @@
+.iframe {
+	&__section-title,
+	&__section-subtitle {
+		margin-bottom: 20px;
+	}
+	@include e('link') {
+		@include m('main') {
+			font-weight: 700;
+		}
+	}
+	@include e('link-list') {
+		@extend .border--light;
+		border-bottom: 1px solid;
+		padding-bottom: 40px;
+	}
+	@include e('sublink-list') {
+		margin-left: 40px;
+	}
+	@include e('main') {
+		@extend .clearfix;
+	}
+	@include e('image') {
+		@extend .responsive;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		@include m('half') {
+			width: 50%;
+			float: left;
+		}
+	}
+	@include e('list') {
+		margin-left: 30px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		@include m('ordered') {
+			list-style-position: inside;
+			list-style-type: decimal;
+		}
+		@include m('unordered') {
+			list-style-type: disc;
+		}
+	}
+	@include respond-to('upto-s') {
+		width: 100%;
+	}
+	@include respond-to('mp') {
+		@include m('documentation') {
+			float: left;
+			width: 70%;
+			padding-left: 30px;
+		}
+	}
+}

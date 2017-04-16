@@ -1,0 +1,45 @@
+.page-bar {
+	@extend .clearfix;
+	border-bottom: 1px solid $s-d-c;
+	.social-media-icon {
+		margin-left: 5px;
+	}
+	.title {
+		color: $p-l-c;
+	}
+	.subtitle {
+		color: $t-l-c;
+	}
+	@include respond-to('xs') {
+		padding-bottom: 15px;
+		.right {
+			margin-top: 15px;
+		}
+	}
+	@include respond-to('sp') {
+		height: 70px;
+		.left {
+			float: left;
+		}
+		.right {
+			float: right;
+		}
+		.left,
+		.right {
+			height: 100%;
+			&:before {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				height: 100%;
+			}
+		}
+		.title,
+		.subtitle {
+			display: inline-block;
+		}
+		.title {
+			margin-right: 15px;
+		}
+	}
+}

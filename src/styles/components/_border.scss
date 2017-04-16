@@ -1,0 +1,14 @@
+.border {
+	@include m('left') {
+		border-left: 1px solid;
+	}
+	@include m('right') {
+		border-right: 1px solid;
+	}
+	@include m('top') {
+		border-top: 1px solid;
+	}
+	@include m('bottom') {
+		border-bottom: 1px solid;
+	}
+}

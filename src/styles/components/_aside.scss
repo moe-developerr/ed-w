@@ -1,0 +1,77 @@
+.aside {
+	@include m('documentation') {
+		padding-left: 20px;
+		border-left: 1px solid;
+		border-right: 1px solid;
+	}
+	@include e('link') {
+		position: relative;
+		display: block;
+		&:hover,
+		&.active {
+			&:before {
+				content: '';
+				position: absolute;
+				top: 25%;
+				border-left: 6px solid;
+				border-top: 6px solid;
+				border-bottom: 6px solid;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				width: 1px;
+				height: 24px;
+			}
+		}
+	}
+	@include respond-to('upto-s') {
+		transition: transform $transition-duration;
+		@include m('documentation') {
+			transform: translateX(-100%);
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 11;
+			height: 100%;
+			max-width: 300px;
+			width: 100%;
+			padding-top: 20px;
+			padding-right: 20px;
+			padding-bottom: 20px;
+			overflow-y: auto;
+			&.active {
+				transform: translateX(0);
+			}
+		}
+		@include e('link') {
+			&:hover,
+			&.active {
+				&:before {
+					left: -18px;
+				}
+				&:after {
+					left: -19px;
+				}
+			}
+		}
+	}
+	@include respond-to('mp') {
+		@include m('documentation') {
+			float: left;
+			width: 30%;
+		}
+		@include e('link') {
+			&:hover,
+			&.active {
+				&:before {
+					left: -20px;
+				}
+				&:after {
+					left: -21px;
+				}
+			}
+		}
+	}
+}

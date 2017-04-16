@@ -1,0 +1,42 @@
+// screen sizes
+$screen-xs-max: 767px;
+$screen-s-min: 768px;
+$screen-s-max: 991px;
+$screen-m-min: 992px;
+$screen-m-max: 1199px;
+$screen-l-min: 1200px;
+
+// colors
+$p-l-c: #1c41a9;
+$s-l-c: #fff;
+$t-l-c: #01b6e8;
+
+$p-d-c: #5a5a5a; // text color
+$s-d-c: #e7e7e7; // body bg color
+
+// transition delay
+$transition-duration: .25s;
+
+// fonts
+$body-ff: 'Open Sans', sans-serif;
+$heading-ff: 'Museo';
+
+$body-fz: 1.5rem;
+$xs-h1-fz: 2em;
+$h1-fz: 2.369em;
+$h2-fz: 1.777em;
+$h3-fz: 1.333em;
+$h4-fz: 1em;
+$h5-fz: 0.833em;
+$h6-fz: 0.694em;
+
+// line height
+$body-lh: 1.6;
+$baseline: strip-unit($body-lh*$body-fz*10)/2;
+$xs-h1-lh: decimal-ceil(lh($xs-h1-fz, $body-fz, 3*$baseline), 2);
+$h1-lh: decimal-ceil(lh($h1-fz, $body-fz, 3*$baseline), 2);
+$h2-lh: decimal-ceil(lh($h2-fz, $body-fz, 3*$baseline), 2);
+$h3-lh: decimal-ceil(lh($h3-fz, $body-fz, 2*$baseline), 2);
+$h4-lh: decimal-ceil(lh($h4-fz, $body-fz, 2*$baseline), 2);
+$h5-lh: decimal-ceil(lh($h5-fz, $body-fz, $baseline), 2);
+$h6-lh: decimal-ceil(lh($h6-fz, $body-fz, $baseline), 2);

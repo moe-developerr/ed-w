@@ -1,0 +1,308 @@
+// layout classes
+.container {
+	@extend .clearfix;
+	position: relative;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	@include respond-to('s') {
+		max-width: 750px;
+	}
+	@include respond-to('m') {
+		max-width: 970px;
+	}
+	@include respond-to('l') {
+		max-width: 1170px;
+	}
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+.position {
+	@include m('rel') {
+		position: relative;
+	}
+}
+
+.m {
+	&-b30 { margin-bottom: 30px; }
+}
+
+.mp-position {
+	@include respond-to('mp') {
+		@include m('abs') {
+			&-r,
+			&-l,
+			&-t,
+			&-b {
+				position: absolute;
+			}
+			&-r {
+				right: 0;
+			}
+		}
+	}
+}
+
+.pull {
+	@include m('right') {
+		float: right;
+	}
+	@include m('left') {
+		float: left;
+	}
+}
+
+.col-image {
+	@include respond-to('mp') {
+		&.col-mp--pull-6 {
+			padding-right: 70px;
+		}
+		&:not(.col-mp--pull-6) {
+			padding-left: 70px;
+		}
+	}
+}
+
+.col-mp {
+	@include respond-to('mp') {
+		@include m('6') {
+			float: left;
+			width: 50%;
+		}
+		@include m('push-6') {
+			position: relative;
+			left: 50%;
+		}
+		@include m('pull-6') {
+			position: relative;
+			left: -50%;
+		}
+		@include m('6') {
+			float: left;
+			width: 50%;
+		}
+		@include m('pl-1') {
+			padding-left: $baseline + px;
+		}
+		@include m('pr-1') {
+			padding-right: $baseline + px;
+		}
+	}
+}
+
+.line-through {
+	text-decoration: line-through;
+}
+
+.text {
+	@include m('center') {
+		text-align: center;
+	}
+	@include m('left') {
+		text-align: left;
+	}
+}
+
+.fz {
+	@include m('smaller') {
+		font-size: 1.4rem;
+		line-height: 1.714285714285714;
+	}
+	@include m('smallest') {
+		font-size: 1.3rem;
+		line-height: 1.846153846153846;
+	}
+}
+
+.has-hash {
+	&:before {
+		content: '#';
+		margin-right: 5px;
+		font-weight: 300;
+		opacity: .3;
+	}
+}
+
+.super {
+	vertical-align: super;
+		
+	@include m('per') {
+		font-family: $body-ff;
+		@include respond-to('xs') {
+			font-size: 1.3rem;
+			line-height: 1.846153846153846;
+		}
+		@include respond-to('sp') {
+			font-size: 1.4rem;
+			line-height: 1.714285714285714;
+		}
+	}
+	@include m('index') {
+		font-family: $body-ff;
+		font-size: 1rem;
+	}
+	@include m('currency') {
+		font-family: $heading-ff;
+		font-size: 2rem;
+		position: relative;
+	}
+}
+
+// visibility classes
+.xxs {
+	@media screen and (max-width: 480px) {
+		@include m('hidden') {
+			display: none;
+		}
+	}
+}
+
+.xs {
+	@include m('hidden') {
+		@include respond-to('xs') {
+			display: none;
+		}
+	}
+	@include m('visible') {
+		@include respond-to('sp') {
+			display: none;
+		}
+	}
+}
+
+.mp {
+	@include m('hidden') {
+		@include respond-to('mp') {
+			display: none;
+		}
+	}
+	@include m('visible') {
+		@include respond-to('upto-s') {
+			display: none;
+		}
+	}
+}
+
+.l {
+	@include m('visible') {
+		@include respond-to('upto-m') {
+			display: none;
+		}
+	}
+}
+
+.m {
+	@include m('hidden') {
+		@include respond-to('m') {
+			display: none;
+		}
+	}
+}
+
+.s {
+	@include respond-to('s') {
+		@include m('fn') {
+			&,
+			&.highlight {
+				float: none;
+			}
+		}
+	}
+}
+
+.display {
+	@include m('none') {
+		display: none;
+	}
+}
+
+// spacing classes 
+.mb {
+	@include m('1') {
+		margin-bottom: $baseline*1 + px;
+	}
+	@include m('2') {
+		margin-bottom: $baseline*2 + px;
+	}
+	@include m('3') {
+		margin-bottom: $baseline*3 + px;
+	}
+}
+
+.mt {
+	@include m('1') {
+		margin-top: $baseline*1 + px;
+	}
+	@include m('2') {
+		margin-top: $baseline*2 + px;
+	}
+	@include m('3') {
+		margin-top: $baseline*3 + px;
+	}
+}
+
+.mtb {
+	@include m('1') {
+		@extend .mt--1;
+		@extend .mb--1;
+	}
+	@include m('2') {
+		@extend .mt--2;
+		@extend .mb--2;
+	}
+	@include m('3') {
+		@extend .mt--3;
+		@extend .mb--3;
+	}
+}
+
+.pb {
+	@include m('1') {
+		padding-bottom: $baseline*1 + px;
+	}
+	@include m('2') {
+		padding-bottom: $baseline*2 + px;
+	}
+	@include m('3') {
+		padding-bottom: $baseline*3 + px;
+	}
+}
+
+.pt {
+	@include m('1') {
+		padding-top: $baseline*1 + px;
+	}
+	@include m('2') {
+		padding-top: $baseline*2 + px;
+	}
+	@include m('3') {
+		padding-top: $baseline*3 + px;
+	}
+}
+
+.ptb {
+	@include m('1') {
+		@extend .pt--1;
+		@extend .pb--1;
+	}
+	@include m('2') {
+		@extend .pt--2;
+		@extend .pb--2;
+	}
+	@include m('3') {
+		@extend .pt--3;
+		@extend .pb--3;
+	}
+}

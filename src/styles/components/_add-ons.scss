@@ -1,0 +1,111 @@
+.add-ons-container {
+	@extend .mtb--3;
+}
+
+.add-on {
+	margin-bottom: 36px;
+	
+	&__submit-btn,
+	&__request-btn {
+		@extend .fz--smaller;
+		@extend .plc--bg;
+		@extend .btn;
+		@extend .btn--wide;
+		min-width: 165px;
+		border: none;
+		vertical-align: top;
+		&.active {
+			display: block;
+		}
+	}
+
+	&__form,
+	&__request-btn {
+		@extend .mt--2;
+		display: none;
+		float: right;
+	}
+
+	@include e('title') {
+		padding: 0;
+		margin: 0;
+	}
+
+	@include e('highlight') {
+		padding: 20px;
+	}
+
+	@include e('price') {
+		font-family: $heading-ff;
+		font-size: 5rem;
+		line-height: 1;
+		font-weight: 300;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	@include e('panel') {
+		@extend .clearfix;
+		position: relative;
+		text-align: left;
+		padding: 20px;
+	}
+
+	@include e('form') {
+		&.active {
+			display: block;
+		}
+	}
+
+	@include e('email') {
+		@extend .form__input--tlc;
+		@extend .form__input--smaller;
+		vertical-align: top;
+	}
+
+	@include respond-to('xs') {
+		&__email,
+		&__submit-btn,
+		&__request-btn {
+			width: 100%;
+			margin-bottom: 12px;
+		}
+
+		@include e('form') {
+			float: none;
+		}
+	}
+	
+	@include respond-to('mp') {
+		display: table;
+		@include e('highlight') {
+			display: table-cell;
+		}
+
+		@include e('panel') {
+			display: table-cell;
+			vertical-align: top;
+		}
+	}
+
+	@include respond-to('m') {
+		@include e('highlight') {
+			width: 310px;
+		}
+
+		@include e('panel') {
+			border-left: 5px solid;
+		}
+	}
+
+	@include respond-to('l') {
+		@include e('highlight') {
+			width: 350px;
+		}
+
+		@include e('panel') {
+			border-left: 45px solid;
+		}
+	}
+
+}

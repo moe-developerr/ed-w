@@ -1,0 +1,106 @@
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+	&:lang(en),
+	&:lang(fr) {
+		body {
+			font-family: $body-ff;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			font-family: $heading-ff;
+		}
+	}
+}
+
+body {
+	font-size: $body-fz;
+	line-height: $body-lh;
+	overflow-x: hidden;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 300;
+}
+
+h1 {
+	@include respond-to('xs') {
+		font-size: $xs-h1-fz;
+		line-height: $xs-h1-lh;
+		margin-bottom: $baseline - 9 + px;
+		padding-top: $baseline - 3 + px;
+	}
+	@include respond-to('sp') {
+		font-size: $h1-fz;
+		line-height: $h1-lh;
+		margin-bottom: $baseline - 7 + px;
+		padding-top: $baseline - 5 + px;
+	}
+}
+
+h2 {
+	font-size: $h2-fz;
+	line-height: $h2-lh;
+	margin-bottom: $baseline - 10 + px;
+	padding-top: $baseline - 2 + px;
+}
+
+h3 {
+	font-size: $h3-fz;
+	line-height: $h3-lh;
+	margin-bottom: $baseline - 6 + px;
+	padding-top: $baseline - 6 + px;
+}
+
+h4 {
+	font-size: $h4-fz;
+	line-height: $h4-lh;
+	margin-bottom: $baseline - 7 + px;
+	padding-top: $baseline - 5 + px;
+}
+
+h5 {
+	font-size: $h5-fz;
+	line-height: $h5-lh;
+	margin-bottom: $baseline - 2 + px;
+	padding-top: $baseline - 10 + px;
+}
+
+h6 {
+	font-size: $h6-fz;
+	line-height: $h6-lh;
+	margin-bottom: $baseline - 2 + px;
+	padding-top: $baseline - 10 + px;
+}
+
+p {
+	margin-bottom: $baseline - 6 + px;
+	padding-top: $baseline - 6 + px;
+}
+
+input,
+button,
+textarea,
+select {
+	vertical-align: bottom;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	vertical-align: middle;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid;
+	margin: 0;
+}

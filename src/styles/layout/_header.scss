@@ -1,0 +1,78 @@
+.header {
+	@extend .fz--smaller;
+
+	@include m('top') {
+		height: 30px;
+		line-height: 30px;
+	}
+	@include m('bot') {
+		line-height: 80px;
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 100%;
+		z-index: 10;
+	}
+	@include respond-to('xs') {
+		@include m('bot') {
+			&.sticky {
+				@include m('xs') {
+					position: fixed;
+					top: 0;
+					width: 100%;
+						
+					& + .main {
+						margin-top: 80px;
+					}
+
+				}
+			}
+		}
+	}
+	@include respond-to('sp') {
+		@include m('bot') {
+			&.sticky {
+				@include m('sp') {
+					position: fixed;
+					top: 0;
+					width: 100%;
+					max-width: 1600px;
+					@media screen and (min-width: 1601px) {
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				}
+			}
+		}
+	}
+	@include respond-to('s') {
+		.btn {
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-left: 5px;
+		}
+		&.sticky {
+			@include m('sp') {
+				& + .main {
+					margin-top: 160px;
+				}
+			}
+		}
+	}
+	@include respond-to('m') {
+		.btn {
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-left: 5px;
+		}
+	}
+	@include respond-to('mp') {
+		&.sticky {
+			@include m('sp') {
+				& + .main {
+					margin-top: 80px;
+				}
+			}
+		}
+	}
+
+}

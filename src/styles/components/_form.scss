@@ -1,0 +1,78 @@
+.form {
+	@include m('hero') {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	@include e('reply') {
+		font-size: 1.3rem;
+	}
+
+	@include e('input') {
+		transition: all $transition-duration;
+		transform: translateZ(0);
+		padding-left: 6px;
+		background-size: 200%;
+		border: none;
+		height: 36px;
+		margin-bottom: 15px;
+
+		@include m('half') {
+			@media screen and (min-width: 501px) {
+				float: left;
+				width: 49%;
+				&:nth-of-type(odd) {
+					margin-right: 1%;
+				}
+				&:nth-of-type(even) {
+					margin-left: 1%;
+				}
+			}
+
+			@media screen and (max-width: 500px) {
+				width: 100%;
+			}
+		}
+		@include m('full') {
+			width: 100%;
+		}
+		@include m('smaller') {
+			border: none;
+			height: 34px;
+			padding-left: 10px;
+			@include respond-to('sp') {
+				min-width: 250px;
+			}
+		}
+	}
+
+	@include e('textarea') {
+		height: 240px;
+		max-height: 240px;
+	}
+
+	@include e('submit') {
+		width: 100%;
+		border: none;
+		min-height: 36px;
+		margin-bottom: 10px;
+
+		&-text {
+			@media screen and (max-width: 480px) {
+				display: block;
+			}
+			@media screen and (min-width: 481px) {
+				&:first-of-type {
+					float: left;
+				}
+				&:last-of-type {
+					float: right;
+				}
+			}
+		}
+	}
+}
+
+#on-premises-form {
+	display: none;
+}

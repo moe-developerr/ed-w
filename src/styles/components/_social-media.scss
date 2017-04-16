@@ -1,0 +1,20 @@
+.social-media-icon {
+	font-size: 1.5rem;
+	border-radius: 50%;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+	background-color: lighten($p-d-c, 30%);
+	color: $s-l-c;
+	&:hover {
+		background-color: $p-l-c;
+	}
+}
+
+.social-media-text {
+	color: lighten($p-d-c, 30%);
+	display: inline-block;
+	margin-right: 15px;
+}

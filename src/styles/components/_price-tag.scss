@@ -1,0 +1,112 @@
+.price-tag-container {
+	@extend .clearfix;
+}
+
+.price-tag {
+	@extend .mtb--3;
+	width: 100%;
+
+	&__footer-item,
+	&__body-item {
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid;
+		&:last-of-type {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+	}
+
+	@include e('header') {
+		padding: 20px;
+	}
+
+	@include e('header-top') {
+		border-bottom: 1px solid;
+		padding-bottom: 10px;
+	}
+
+	@include e('title') {
+		padding: 0;
+		margin: 0;
+		line-height: 1;
+	}
+
+	@include e('header-bot') {
+		padding-top: 10px;
+	}
+
+	@include e('old-price') {
+		font-family: $heading-ff;
+		font-size: 3rem;
+		font-weight: 300;
+	}
+	
+	@include e('new-price') {
+		font-family: $heading-ff;
+		font-size: 4rem;
+		font-weight: 300;
+		line-height: 1;
+	}
+
+	@include e('current-offer') {
+		@extend .fz--smallest;
+	}
+	
+	@include e('body') {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		height: 300px;
+	}
+
+	@include e('footer') {
+		padding-bottom: 20px;
+	}
+
+	@include e('footer-title') {
+		padding: 10px;
+		margin-bottom: 0;
+	}
+
+	@include e('btn') {
+		display: inline-block;
+		width: 100%;
+		max-width: 230px;
+		margin-bottom: 12px;
+	}
+
+	@include respond-to('xs') {
+		@include e('old-price') {
+			font-size: 2rem;
+		}
+		@include e('new-price') {
+			font-size: 3.7rem;
+		}
+	}
+
+	@include respond-to('upto-s') {
+		max-width: 350px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include respond-to('mp') {
+		float: left;
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	@include respond-to('m') {
+		max-width: 310px;
+		margin-right: 5px;
+	}
+
+	@include respond-to('l') {
+		max-width: 350px;
+		margin-right: 45px;
+	}
+	
+}

@@ -1,0 +1,47 @@
+@mixin respond-to($screen) {
+	@if $screen == 'xs' {
+		@media screen and (max-width: $screen-xs-max) {
+			@content;
+		}
+	} @else if $screen == 's' {
+		@media screen and (min-width: $screen-s-min) and (max-width: $screen-s-max) {
+			@content;
+		}
+	} @else if $screen == 'm' {
+		@media screen and (min-width: $screen-m-min) and (max-width: $screen-m-max) {
+			@content;
+		}
+	} @else if $screen == 'l' {
+		@media screen and (min-width: $screen-l-min) {
+			@content;
+		}
+	} @else if $screen == 'sp' {
+		@media screen and (min-width: $screen-s-min) {
+			@content;
+		}
+	} @else if $screen == 'mp' {
+		@media screen and (min-width: $screen-m-min) {
+			@content;
+		}
+	} @else if $screen == 'upto-s' {
+		@media screen and (max-width: $screen-s-max) {
+			@content;
+		}
+	} @else if $screen == 'upto-m' {
+		@media screen and (max-width: $screen-m-max) {
+			@content;
+		}
+	}
+}
+
+@mixin e($element-shorthand-selector) {
+	&__#{$element-shorthand-selector} {
+		@content;
+	}
+}
+
+@mixin m($modifier-shorthand-selector) {
+	&--#{$modifier-shorthand-selector} {
+		@content;
+	}
+}

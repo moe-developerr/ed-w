@@ -1,0 +1,13 @@
+.logo {
+	@include m('header') {
+		@include respond-to('mp') {
+			margin-right: 15px;
+		}
+	}
+	@include m('footer') {
+		margin-right: 15px;
+		.responsive {
+			vertical-align: top;
+		}
+	}
+}

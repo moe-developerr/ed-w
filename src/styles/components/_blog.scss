@@ -1,0 +1,78 @@
+.blog {
+	&-row {
+		@extend .clearfix;
+		border-bottom: 1px solid $s-d-c;
+		padding: 30px 0;
+		overflow: hidden;
+		position: relative;
+		&:not(.push-pull) {
+			.blog-link {
+				right: 0;
+			}
+		}
+		&.push-pull {
+			.blog-link {
+				right: calc(50% + 15px);
+			}
+		}
+	}
+
+	&-title {
+		color: $p-l-c;
+	}
+	&-subtitle {
+		color: $t-l-c;
+	}
+
+	&-text {
+		margin-top: 15px;
+		padding-bottom: 45px;
+	}
+
+	&-link {
+		padding: 5px 25px;
+		background-color: $t-l-c;
+		color: $s-l-c;
+		&:hover { background-color: lighten($t-l-c, 10%); }
+	}
+	
+	@include respond-to('xs') {
+		&-image-wrapper {
+			margin-bottom: 30px;
+		}
+	}
+	@include respond-to('sp') {
+		&-text-wrapper,
+		&-image-wrapper {
+			float: left;
+			width: 50%;
+			margin-bottom: -99999px;
+			padding-bottom: 99999px;
+		}
+		&-image-wrapper {
+			&:not(.push) {
+				padding-right: 15px;
+			}
+			&.push {
+				position: relative;
+				left: 50%;
+				padding-left: 15px;
+			}
+		}
+		&-text-wrapper {
+			&:not(.pull) {
+				padding-left: 15px;
+			}
+			&.pull {
+				padding-right: 15px;
+				position: relative;
+				left: -50%;
+			}
+		}
+		&-link {
+			position: absolute;
+			bottom: 30px;
+		}
+	}
+
+}

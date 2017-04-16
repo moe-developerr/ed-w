@@ -1,0 +1,33 @@
+{
+  "name": "starter-template",
+  "version": "1.0.0",
+  "description": "A starter template to start your project with",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moe-developerr/Starter-Template.git"
+  },
+  "keywords": [
+    "Starter",
+    "template"
+  ],
+  "author": "Moe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moe-developerr/Starter-Template/issues"
+  },
+  "homepage": "https://github.com/moe-developerr/Starter-Template#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "merge-stream": "^1.0.0"
+  }
+}

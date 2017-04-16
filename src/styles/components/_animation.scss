@@ -1,0 +1,51 @@
+.csstransitions {
+
+	@include respond-to('sp') {
+		[data-aos] {
+			transition-duration: 0.5s;
+			transition-property: all;
+			transition-timing-function: cubic-bezier(0.51, 0.02, 0, 1.335);
+		}
+
+		/* resultant states */
+		
+		[data-aos*="slide"].animate {
+			transform: translate(0, 0);
+		}
+
+		[data-aos*="fade-in"].animate {
+			opacity: 1;
+		}
+
+		[data-aos*="fade-out"].animate {
+			opacity: 1;
+		}
+
+		/* initial states */
+
+		[data-aos*="fade-in"] {
+			opacity: 0;
+		}
+
+		[data-aos*="fade-out"] {
+			opacity: 1;
+		}
+
+		[data-aos*="slide-down"] {
+			transform: translate(0, 110%);
+		}
+
+		[data-aos*="slide-up"] {
+			transform: translate(0, -110%);
+		}
+
+		[data-aos*="slide-left"] {
+			transform: translate(110%, 0);
+		}
+
+		[data-aos*="slide-right"] {
+			transform: translate(-110%, 0);
+		}
+	}
+
+}

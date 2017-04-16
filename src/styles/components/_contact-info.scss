@@ -1,0 +1,7 @@
+.contact-info {
+	padding-right: 15px;
+	@include e('link') {
+		display: inline-block;
+		margin-left: 10px;
+	}
+}

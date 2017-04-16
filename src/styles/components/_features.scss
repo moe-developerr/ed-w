@@ -1,0 +1,42 @@
+.features {
+	@extend .clearfix;
+	@extend .fz--smaller;
+	margin-top: 40px;
+
+	p {
+		line-height: 1.5;
+	}
+}
+
+.feature {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 60px;
+	
+	@include e('icon') {
+		font-size: 5rem;
+	}
+	@include respond-to('sp') {
+		float: left;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	@include respond-to('mp') {
+		width: 25%;
+		&:nth-of-type(4n+1) {
+			clear: left;
+		}
+	}
+	@include respond-to('xs') {
+		max-width: 300px;
+	}
+	@include respond-to('s') {
+		width: 50%;
+		&:nth-of-type(2n+1) {
+			clear: left;
+		}
+	}
+	@include respond-to('upto-s') {
+		margin-bottom: 20px;
+	}
+}

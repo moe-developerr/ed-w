@@ -1,0 +1,15 @@
+.myicon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+	@include m('video') {
+		float: left;
+		width: 46px;
+		height: 45px;
+		background: url('../../images/video-icon.png') no-repeat center;
+		transition: transform .6s;
+		&:hover {
+			transform: rotate(270deg);
+		}
+	}
+}

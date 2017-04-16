@@ -1,0 +1,65 @@
+.hero {
+	background: url('../../images/hero-bg.jpg') no-repeat center;
+	background-size: cover;
+	
+	&__image-wrapper,
+	&__form-container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	@include e('form-section') {
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include e('video') {
+		transition: margin-top $transition-duration;
+	}
+
+	@include e('video-text') {
+		display: block;
+		margin-left: 56px;
+		padding-top: 10px;
+	}
+
+	@include e('image-wrapper') {
+		text-align: center;
+	}
+
+	@include respond-to('upto-s') {
+		@include e('form-container') {
+			margin-bottom: 40px;
+		}
+	}
+
+	@include respond-to('upto-m') {
+		@include e('video') {
+			margin-top: 30px;
+			transition: margin-top $transition-duration;
+		}
+		@include e('image-wrapper') {
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	@include respond-to('mp') {
+		&__image-wrapper,
+		&__form-container {
+			width: 50%;
+		}
+		@include e('image-wrapper') {
+			float: left;
+		}
+		@include e('form-container') {
+			float: right;
+		}
+	}
+	@include respond-to('l') {
+		@include e('video') {
+			margin-top: 85px;
+		}
+	}
+}

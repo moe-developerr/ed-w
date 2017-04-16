@@ -1,0 +1,14 @@
+.checkbox {
+	cursor: pointer;
+	width: 21px;
+	height: 21px;
+	line-height: 22.5px;
+	margin-top: 7.5px;
+	margin-right: 7px;
+	text-align: center;
+	@include e('filling') {
+		display: inline-block;
+		width: 13px;
+		height: 13px;
+	}
+}

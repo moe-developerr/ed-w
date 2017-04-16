@@ -1,0 +1,73 @@
+.drop-down {
+	position: relative;
+	width: 110px;
+	
+	@include m('currency') {
+		font-size: 1.5rem;
+		line-height: 35px;
+		@include e('trigger') {
+			font-size: 1.5rem;
+			line-height: 35px;
+		}
+	}
+
+	@include e('btn') {
+		width: 100%;
+		border: none;
+		padding: 0;
+	}
+	&__selected-item,
+	&__item-text {
+		padding-right: 10px;
+	}
+	@include e('caret') {
+		font-size: 1rem;
+		display: none;
+		&.active {
+			display: inline-block;
+		}
+	}
+	@include e('list') {
+		line-height: 1.6;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		display: none;
+	}
+	@include e('link') {
+		display: none;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 2.5px;
+		padding-bottom: 2.5px;
+		&.active {
+			display: block;
+		}
+	}
+	
+	@include respond-to('upto-s') {
+		@include m('currency') {
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+
+	@include respond-to('mp') {
+		&-currency-wrapper {
+			position: absolute;
+			right: 0;
+			top: 7px;
+		}
+		@include m('currency') {
+			float: right;	
+			@include e('trigger') {
+				float: right;
+				margin-right: 10px;
+			}
+		}
+	}
+
+}
